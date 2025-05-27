@@ -43,7 +43,7 @@ public class ClockTest {
     }
 
     @Test
-    public void activateTimer() throws InterruptedException {
+    public void activateTimerAndDisable() throws InterruptedException {
         driver.findElement(By.xpath("//android.widget.TextView[@text='TIMER']")).click();
 
         driver.findElement(By.id("com.google.android.deskclock:id/right_button")).click();
