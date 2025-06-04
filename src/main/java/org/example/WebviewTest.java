@@ -30,6 +30,13 @@ public class WebviewTest {
         driver.findElement(By.xpath("//android.widget.TextView[@text=\"Webview\"]")).click();
         Thread.sleep(7000);
         driver.context("WEBVIEW_com.wdiodemoapp");
+        boolean RobotVisible = driver.findElement(By.cssSelector("h1.hero_title")).isDisplayed();
+        Assertions.assertTrue(RobotVisible);
+
+        driver.context("NATIVE_APP");
+        driver.findElement(By.xpath("//android.widget.TextView[@text=\"Home\"]")).click();
+        boolean LogoVisible = driver.findElement(By.xpath("//android.widget.TextView[@text=\"WEBDRIVER\"]")).isDisplayed();
+        Assertions.assertTrue(LogoVisible);
     }
 
     @AfterEach
